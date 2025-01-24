@@ -8,7 +8,7 @@ unset($_SESSION['feedback']);
 
 $idUpdate = $_GET['update'];
 $clientesData = $pdo->query("SELECT name, cpf from cliente where id = $idUpdate");
-$result = $clientesData->fetch()
+$result = $clientesData->fetch();
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,7 @@
 <?php
 session_start();
+$erro = $_SESSION['erro'] ?? false;
+unset($_SESSION['erro']);
 require "../conexaoBanco.php";
 global $pdo;
 
@@ -15,6 +17,12 @@ global $pdo;
 
 <body>
 
+    <?php
+    if ($erro) {
+        echo $erro;
+    }
+
+    ?>
     <table>
 
         <thead>
@@ -25,20 +33,22 @@ global $pdo;
         </thead>
 
         <tbody>
-            <?php 
+            <?php
+
+
             $clientesData = $pdo->query("SELECT * from cliente");
             $results = $clientesData->fetchAll();
-            
-                foreach ($results as $cliente) {
-                    echo "<tr>";
-                    echo "<td>" . $cliente["name"] . "</td>";
-                    echo "<td>" . $cliente["cpf"] . "</td>";
-                    echo "<td>" . $cliente["created_at"] . "</td>";
-                    echo "<td>" . $cliente["update_at"] . "</td>";
-                    echo "<td> <a href='../delete/deleteCliente.php?delete={$cliente['id']}'> DELETAR </a> </td>";
-                    echo "<td> <a href='../update/updateCliente.php?update={$cliente['id']}'> EDITAR </a> </td>";  
-                    echo "</tr>";
-                }
+
+            foreach ($results as $cliente) {
+                echo "<tr>";
+                echo "<td>" . $cliente["name"] . "</td>";
+                echo "<td>" . $cliente["cpf"] . "</td>";
+                echo "<td>" . $cliente["created_at"] . "</td>";
+                echo "<td>" . $cliente["update_at"] . "</td>";
+                echo "<td> <a href='../delete/deleteCliente.php?delete={$cliente['id']}'> DELETAR </a> </td>";
+                echo "<td> <a href='../update/updateCliente.php?update={$cliente['id']}'> EDITAR </a> </td>";
+                echo "</tr>";
+            }
             ?>
         </tbody>
     </table>

@@ -1,0 +1,45 @@
+#body{
+    background-color: rgb(247, 247, 210);
+}
+#divbtn{
+    background-color: rgb(255, 255, 144);
+    text-align: center;
+    margin-top: 6%;
+    margin-left: 38%;
+    position: absolute;
+    background-size: 30px;
+    padding: 160px 80px;
+    border-radius: 10px;
+    box-shadow:  10px 10px 5px #ffd96fdc;
+    
+}
+#btnListarCliente{
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 174, 0.747);
+    border: none;
+    font-family: cursive;
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -60px;
+}
+#btnListarPet{
+    padding: 5px 20px;
+    background-color: rgba(255, 255, 174, 0.747);
+    border: none;
+    font-family: cursive;
+    cursor: pointer;
+    font-size:15px;
+    margin-top: -50px;
+    margin-left: 10px;
+}
+
+#h1{
+    margin-top: -110px;
+    margin-left: -10px;
+    position: absolute;
+    color: rgba(0, 0, 0, 0.534);
+
+}

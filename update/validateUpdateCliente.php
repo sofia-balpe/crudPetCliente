@@ -12,7 +12,7 @@ $erros = [];
 if (strlen($nome)<5) {
     $erros[]="Nome deve ter no mínimo 5 caracteres";
 }
-if (strlen($cpf)<11) {
+if (!preg_match("/^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}/", $cpf, $matches)) {
     $erros[]="CPF inválido";
 }
 
@@ -21,11 +21,13 @@ if (!empty($erros)) {
     header('Location: updateCliente.php?update=' . $id);
     exit();
 }
+
 $sql = "UPDATE cliente SET name = :nome, cpf = :cpf WHERE id= :id";
 
 $PDOStatement = $pdo->prepare($sql);
 $PDOStatement->bindParam('nome', $nome);
 $PDOStatement->bindParam("cpf", $cpf);
+$PDOStatement->bindParam("id", $id);
 $PDOStatement->bindParam("id", $id);
 $PDOStatement->execute();
 

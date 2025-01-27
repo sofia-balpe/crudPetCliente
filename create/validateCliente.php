@@ -6,13 +6,16 @@ global $pdo;
 $nome = $_POST['nomeCliente'];
 $cpf = $_POST['cpfCliente'];
 
+
 $erros = [];
 
 if (strlen($nome)<5) {
     $erros[]="Nome deve ter no mínimo 5 caracteres";
 }
-if (strlen($cpf)<11) {
-    $erros[]="CPF inválido";
+
+//espaço usa #
+if(!preg_match("/^([0-9]){3}\.([0-9]){3}\.([0-9]){3}-([0-9]){2}/", $cpf, $matches)) {
+   $erros[] = "CPF inválido";
 }
 
 if (!empty($erros)) {

@@ -36,5 +36,8 @@ else{
         <input type="text" name="cpfCliente" placeholder="CPF de Cliente" value="<?php echo $result['cpf']; ?>">
         <input type="submit" value="Editar">
     </form>
+    <a href="../index.php">
+        <button>Voltar</button>
+    </a>
 </body>
 </html>

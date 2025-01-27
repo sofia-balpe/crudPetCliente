@@ -2,7 +2,6 @@
 session_start();
 require "../conexaoBanco.php";
 global $pdo;
-
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +26,7 @@ global $pdo;
 
             <tbody>
                 <?php 
-                  $petsData = $pdo->query("SELECT pet.id, pet.nome, pet.raca, pet.cliente_id, c.name from pet INNER JOIN cliente as c");
+                  $petsData = $pdo->query("SELECT pet.id, pet.nome, pet.raca, pet.cliente_id, c.name from pet INNER JOIN cliente as c on c.id = pet.cliente_id");
                   $result = $petsData->fetchAll();
 
                   foreach ($result as $pet) {
@@ -47,6 +46,9 @@ global $pdo;
 
     <a href="../create/createPet.php">
         <button>Cadastrar Pet</button>
+    </a>
+    <a href="../index.php">
+        <button>Voltar</button>
     </a>
 </body>
 

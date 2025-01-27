@@ -33,6 +33,9 @@ global $pdo;
         <input type="submit" value="cadastrar">
     </form>
 <a href="../listar/listarPet.php">listar Pet</a>
+<a href="../index.php">
+        <button>Voltar</button>
+    </a>
 </body>
 
 </html>

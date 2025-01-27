@@ -1,0 +1,31 @@
+#form{
+   margin-top: 20px;
+}
+#idBody{
+   background-color: rgb(247, 247, 210);
+}
+#divForm{
+    background-color: rgba(252, 252, 113, 0.76);
+    padding: 90px 20px;
+    position: absolute;
+    border-radius: 10%;
+    border: 1px solid #ffd96fdc;
+    margin-top: 6%;
+    margin-left: 37%;
+    text-align: center;
+}
+
+#txtNome{
+    padding: 4px 15px;
+}
+#txtCpf{
+    padding: 4px 15px;
+    margin-top: 10px;
+}
+#idSubmit{
+    padding: 4px 10px;
+    border-radius: 10px;
+    background-color: rgba(247, 247, 210, 0.76);
+    margin-top: 10px;
+
+}
